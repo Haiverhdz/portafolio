@@ -1,0 +1,141 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import React from "./icons/React.astro"
+import Node from "./icons/Node.astro"
+import Css from "./icons/Css.astro"
+import JWT from "./icons/JWT.astro"
+import Express from "./icons/Express.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import Vite from "./icons/Vite.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import Html from "./icons/Html.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-black text-white",
+    icon: Node,
+  },
+  CSS: {
+    name: "CSS3",
+    class: "bg-black text-white",
+    icon: Css,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-black text-white",
+    icon: JWT,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    class: "bg-black text-white",
+    icon: Express
+  },
+  MongoDB: {
+    name: "MongoDB",
+    class: "bg-black text-white",
+    icon: MongoDB
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-black text-white",
+    icon: Vite,
+  },
+  HTML5: {
+    name: "HTML5",
+    class: "bg-black text-white",
+    icon: Html,
+  }
+}
+const PROJECTS = [
+  {
+    title: "CONTABLES ECG",
+    description:
+      "Este es un sitio web informativo desarrollado para una empresa de asesoría contable y tributaria. El proyecto fue creado utilizando Node.js, Express y Handlebars como motor de plantillas para renderizar contenido dinámico. Cuenta con un sistema de inicio de sesión mediante JWT, que permite gestionar usuarios de forma segura. La página incluye secciones con información sobre los servicios, misión de la empresa y un formulario de contacto para clientes potenciales",
+    link: "",
+    github: "https://github.com/Haiverhdz/ECG-Contables",
+    image: "/ECG.png",
+    tags: [TAGS.NODE, TAGS.CSS, TAGS.JWT, TAGS.EXPRESS, TAGS.MongoDB],
+  },
+  {
+  title: "Ecommerce Fake API",
+  description:
+    "Tienda online desarrollada con React y Vite que consume productos desde la FakeStore API. Permite explorar productos, ver detalles, añadir al carrito y simular compras. Un proyecto enfocado en la práctica de consumo de APIs, enrutamiento y estado global con Context API.",
+  link: "", 
+  github: "https://github.com/Haiverhdz/Ecommerce-FakeApi",
+  image: "/ecommerce.png",
+  tags: [TAGS.REACT, TAGS.VITE, TAGS.CSS],
+},
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Projects" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <span
+              class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-2 border border-transparent dark:border-white/10 dark:bg-white/10 dark:text-white`}
+              >
+            <tag.icon class="size-6 text-white dark:text-white" />
+              {tag.name}
+            </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

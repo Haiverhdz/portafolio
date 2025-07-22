@@ -1,0 +1,76 @@
+---
+import Css from "./icons/Css.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import React from "./icons/React.astro";
+import Node from "./icons/Node.astro";
+import JWT from "./icons/JWT.astro";
+import Express from "./icons/Express.astro";
+import MongoDB from "./icons/MongoDB.astro";
+import Html from "./icons/Html.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import AstroIcon from "./icons/AstroIcon.astro"
+import Postman from "./icons/Postman.astro";
+import Swagger from "./icons/Swagger.astro";
+
+
+const icons = {
+  NEXT: { name: "Next.js", class: "bg-black text-white", icon: NextJS },
+  TAILWIND: { name: "Tailwind CSS", class: "bg-[#003159] text-white", icon: Tailwind },
+  REACT: { name: "React", class: "bg-black text-white", icon: React },
+  NODE: { name: "Node.js", class: "bg-black text-white", icon: Node },
+  CSS: { name: "CSS", class: "bg-black text-white", icon: Css },
+  JWT: { name: "JWT", class: "bg-black text-white", icon: JWT },
+  EXPRESS: { name: "Express.js", class: "bg-black text-white", icon: Express },
+  MongoDB: { name: "MongoDB", class: "bg-black text-white", icon: MongoDB },
+  HTML5: { name: "HTML5", class: "bg-black text-white", icon: Html },
+  JAVASCRIPT: { name: "JavaScript", class: "bg-black text-white", icon: JavaScript},
+  BOOTSTRAP: { name: "Bootstrap", class: "bg-black text-white", icon: Bootstrap},
+  ASTRO: { name: "Astro", class: "bg-black text-white", icon: AstroIcon},
+  POSTMAN: { name: "Postman", class: "bg-black text white", icon: Postman},
+  SWAGGER: { name: "Swagger", class: "bg-black text white", icon: Swagger}
+};
+
+
+const frontend = [icons.HTML5, icons.CSS, icons.JAVASCRIPT, icons.REACT, icons.TAILWIND, icons.BOOTSTRAP, icons.NEXT, icons.ASTRO
+];
+const backend = [icons.NODE, icons.EXPRESS, icons.JWT, icons.MongoDB, icons.POSTMAN, icons.SWAGGER];
+---
+
+<section class="py-16 bg-white text-gray-900 dark:bg-gray-950 dark:text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">🛠 Tecnologías que uso</h2>
+  
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold text-center mb-6">Frontend</h3>
+          <div class="flex flex-wrap justify-center gap-6">
+            {frontend.map(({ icon: Icon, name }) => (
+              <div class="flex flex-col items-center">
+                <div class="w-16 h-16 p-2 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:scale-110 transition-transform duration-300">
+                  <Icon class="w-full h-full" />
+                </div>
+                <span class="mt-2 text-sm text-gray-700 dark:text-gray-300">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="text-2xl font-semibold text-center mb-6">Backend</h3>
+          <div class="flex flex-wrap justify-center gap-6">
+            {backend.map(({ icon: Icon, name }) => (
+              <div class="flex flex-col items-center">
+                <div class="w-16 h-16 p-2 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:scale-110 transition-transform duration-300">
+                  <Icon class="w-full h-full" />
+                </div>
+                <span class="mt-2 text-sm text-gray-700 dark:text-gray-300">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
