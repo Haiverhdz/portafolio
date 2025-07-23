@@ -16,55 +16,56 @@ import Html from "./icons/Html.astro"
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-white text-black dark:bg-[#003159] dark:text-white border border-gray-300 dark:border-white/10",
     icon: Tailwind,
   },
   REACT: {
     name: "React",
-    class: "bg-black text-white",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: React,
   },
   NODE: {
     name: "Node.js",
-    class: "bg-black text-white",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Node,
   },
   CSS: {
     name: "CSS3",
-    class: "bg-black text-white",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Css,
   },
   JWT: {
     name: "JWT",
-    class: "bg-black text-white",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: JWT,
   },
   EXPRESS: {
     name: "Express.js",
-    class: "bg-black text-white",
-    icon: Express
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    icon: Express,
   },
   MongoDB: {
     name: "MongoDB",
-    class: "bg-black text-white",
-    icon: MongoDB
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    icon: MongoDB,
   },
   VITE: {
     name: "Vite",
-    class: "bg-black text-white",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Vite,
   },
   HTML5: {
     name: "HTML5",
-    class: "bg-black text-white",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Html,
   }
 }
+
 const PROJECTS = [
   {
     title: "CONTABLES ECG",
@@ -108,7 +109,7 @@ const PROJECTS = [
               <span
                 class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-transparent dark:border-white/10 dark:bg-white/10 dark:text-white`}
               >
-                <tag.icon class="size-5 text-white dark:text-white" />
+                <tag.icon class="size-5 text-white dark:text-white " />
                 {tag.name}
               </span>
             ))}
