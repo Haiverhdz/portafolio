@@ -68,10 +68,10 @@ const TAGS = {
 
 const PROJECTS = [
   {
-    title: "CONTABLES ECG",
+    title: "Contables ECG",
     description:
       "Este es un sitio web informativo desarrollado para una empresa de asesoría contable y tributaria. El proyecto fue creado utilizando Node.js, Express y Handlebars como motor de plantillas para renderizar contenido dinámico. Cuenta con un sistema de inicio de sesión mediante JWT, que permite gestionar usuarios de forma segura. La página incluye secciones con información sobre los servicios, misión de la empresa y un formulario de contacto para clientes potenciales",
-    link: "",
+    link: "https://ecg-contables.onrender.com/login",
     github: "https://github.com/Haiverhdz/ECG-Contables",
     image: "/ECG.png",
     tags: [TAGS.NODE, TAGS.CSS, TAGS.EXPRESS, TAGS.JWT, TAGS.MongoDB],
@@ -80,7 +80,7 @@ const PROJECTS = [
   title: "Ecommerce Fake API",
   description:
     "Tienda online desarrollada con React y Vite que consume productos desde la FakeStore API. Permite explorar productos, ver detalles, añadir al carrito y simular compras. Un proyecto enfocado en la práctica de consumo de APIs, enrutamiento y estado global con Context API.",
-  link: "", 
+  link: "https://ecommerce-fake-api-git-main-haivers-projects-cb7bcb5a.vercel.app/", 
   github: "https://github.com/Haiverhdz/Ecommerce-FakeApi",
   image: "/ecommerce.png",
   tags: [TAGS.REACT, TAGS.VITE, TAGS.CSS],
@@ -94,7 +94,14 @@ const PROJECTS = [
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img alt="Projects" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <img
+                alt="Projects"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </a>
           </div>
         </div>
 
@@ -103,13 +110,12 @@ const PROJECTS = [
             {title}
           </h3>
 
-          <!-- ✅ AQUI VA EL NUEVO GRID DE TAGS -->
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2 mb-4">
             {tags.map((tag) => (
               <span
                 class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-transparent dark:border-white/10 dark:bg-white/10 dark:text-white`}
               >
-                <tag.icon class="size-5 text-white dark:text-white " />
+                <tag.icon class="size-5 text-white dark:text-white" />
                 {tag.name}
               </span>
             ))}
@@ -136,7 +142,6 @@ const PROJECTS = [
     ))
   }
 </div>
-
 
 
 
