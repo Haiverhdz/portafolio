@@ -12,6 +12,7 @@ import Vite from "./icons/Vite.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import Html from "./icons/Html.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
 
 const TAGS = {
   NEXT: {
@@ -63,19 +64,36 @@ const TAGS = {
     name: "HTML5",
     class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Html,
+  },
+  ASTRO: {
+    name: "ASTRO",
+    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    icon: AstroIcon,
   }
 }
 
 const PROJECTS = [
+{
+    title: "Pets Adoption",
+    description:
+    "Sitio web de simulación de una fundación de mascotas, desarrollada con Next.js y Tailwind, muestra las mascotas disponibles para adoptar, formulario para solicitar la adopción, en el backend se muestra la solicitud por gmail y en la ruta /dashborad, puedes registrarte e iniciar sesión.",
+    link: "https://petadoption-1-u98p.onrender.com/",
+    github: "https://github.com/Haiverhdz/PetAdoption",
+    image: "/adoptpet.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+
   {
     title: "Contables ECG",
     description:
-      "Este es un sitio web informativo desarrollado para una empresa de asesoría contable y tributaria. El proyecto fue creado utilizando Node.js, Express y Handlebars como motor de plantillas para renderizar contenido dinámico. Cuenta con un sistema de inicio de sesión mediante JWT, que permite gestionar usuarios de forma segura. La página incluye secciones con información sobre los servicios, misión de la empresa y un formulario de contacto para clientes potenciales",
-    link: "https://ecg-contables.onrender.com/login",
-    github: "https://github.com/Haiverhdz/ECG-Contables",
+    "Desarrollo de un sitio web corporativo responsivo para una firma contable, creado con Astro y Tailwind CSS. Incluye sección de bienvenida con imagen de fondo, presentación de servicios, calendario tributario y enlaces de contacto/redes sociales. Diseñado para ofrecer una experiencia rápida, clara y optimizada en dispositivos móviles y escritorio.",
+    link: "https://contables-ecg.vercel.app/",
+    github: "https://github.com/Haiverhdz/contables-ECG",
     image: "/ECG.png",
-    tags: [TAGS.NODE, TAGS.CSS, TAGS.EXPRESS, TAGS.JWT, TAGS.MongoDB],
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
   },
+
+
   {
   title: "Ecommerce Fake API",
   description:
