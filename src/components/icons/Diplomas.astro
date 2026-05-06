@@ -12,28 +12,33 @@ const images = [
 
 <section class="py-12 bg-black/10">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center text-white-800 mb-10">
-    🏆 Certificaciones
+    
+    <h2 class="text-3xl font-bold text-center text-white mb-10">
+      🏆 Certificaciones
     </h2>
 
     <div class="flex justify-center mb-12">
       <img
         src={images[0]}
         alt="Certificación principal"
-        class="w-full h-auto rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+        class="w-full h-auto rounded-lg shadow-md 
+               transform transition-all duration-300 ease-out
+               hover:scale-105 hover:shadow-xl"
       />
     </div>
-
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
       {images.slice(1).map((img, i) => (
-        <div class="flex justify-center">
+        <div class="flex justify-center overflow-hidden rounded-lg">
           <img
             src={img}
             alt={`Certificación ${i + 2}`}
-            class="w-full h-auto rounded-lg shadow-md transform transition-transform duration-300 hover:scale-125"
+            class="w-full h-auto rounded-lg shadow-md 
+                   transform transition-all duration-300 ease-out
+                   hover:scale-[1.03] hover:shadow-xl"
           />
         </div>
       ))}
     </div>
+
   </div>
 </section>
