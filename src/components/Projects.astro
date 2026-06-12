@@ -1,118 +1,144 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import React from "./icons/React.astro"
-import Node from "./icons/Node.astro"
-import Css from "./icons/Css.astro"
-import JWT from "./icons/JWT.astro"
-import Express from "./icons/Express.astro"
-import MongoDB from "./icons/MongoDB.astro"
-import Vite from "./icons/Vite.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import Html from "./icons/Html.astro"
-import AstroIcon from "./icons/AstroIcon.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import React from "./icons/React.astro";
+import Node from "./icons/Node.astro";
+import Css from "./icons/Css.astro";
+import JWT from "./icons/JWT.astro";
+import Express from "./icons/Express.astro";
+import MongoDB from "./icons/MongoDB.astro";
+import Vite from "./icons/Vite.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Html from "./icons/Html.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import JavaScript from "./icons/JavaScript.astro";
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-white text-black dark:bg-[#003159] dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-[#003159] dark:text-white border border-gray-300 dark:border-white/10",
     icon: Tailwind,
   },
   REACT: {
     name: "React",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: React,
   },
   NODE: {
     name: "Node.js",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Node,
   },
   CSS: {
     name: "CSS3",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Css,
   },
   JWT: {
     name: "JWT",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: JWT,
   },
   EXPRESS: {
     name: "Express.js",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Express,
   },
   MongoDB: {
     name: "MongoDB",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: MongoDB,
   },
   VITE: {
     name: "Vite",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Vite,
   },
   HTML5: {
     name: "HTML5",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: Html,
   },
   ASTRO: {
     name: "ASTRO",
-    class: "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
     icon: AstroIcon,
-  }
-}
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class:
+      "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white/10",
+    icon: JavaScript,
+  },
+};
 
 const PROJECTS = [
   {
-    title: "Hana Beauty:",
+    title: "Samy's pet mobile grooming",
+    description:
+      "Desarrollo de un sitio web con React, Tailwind y CSS nativo para un grooming móvil de mascotas. El sitio incluye una sección de bienvenida con una imagen de fondo, presentación de servicios, galería de trabajos anteriores y enlaces de contacto/redes sociales. El diseño es moderno, limpio y optimizado para dispositivos móviles y escritorio. Además, se implementó un formulario de contacto funcional para que los visitantes puedan solicitar información o reservar citas fácilmente donde al poner sus datos quedan registrados en Firebase, ademas se agrega ReactG4 Analytics para medir el tráfico del sitio y el comportamiento de los usuarios, lo que permite optimizar la experiencia y mejorar la conversión de visitantes a clientes. El proyecto se hace en equipo con un amigo, yo me encargue del frontend y el diseño, mientras que el se encargo del backend y la integración con Firebase.",
+      link: "https://www.samyspetsmobilegrooming.com/",
+      github: "https://github.com/camilogc04/samys-pet-app",
+    image: "/samys.webp",
+    tags: [TAGS.REACT, TAGS.CSS, TAGS.TAILWIND, TAGS.VITE, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Hana Beauty",
     description:
       "Desarrollo de un sitio web con Nexts.js y Tailwind CSS para una clienta que tiene servicios personales de make-up, peinados y asesoría de imagen. El sitio incluye una sección de bienvenida con una imagen de fondo, presentación de servicios, galería de trabajos anteriores y enlaces de contacto/redes sociales. El diseño es moderno, limpio y optimizado para dispositivos móviles y escritorio. Además, se implementó un formulario de contacto funcional para que los visitantes puedan solicitar información o reservar citas fácilmente. En algunas secciones se utilizó Claude como vibe coding para generar contenido dinámico y mejorar la experiencia del usuario.",
-      link: "https://www.hanabeauty.com.co/",
-      github: "https://github.com/Haiverhdz/Hana-Beauty",
-      image: "/hana.webp",
-      tags: [TAGS.NEXT, TAGS.TAILWIND],
+    link: "https://www.hanabeauty.com.co/",
+    github: "https://github.com/Haiverhdz/Hana-Beauty",
+    image: "/hana.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
   },
   {
     title: "Pets Adoption",
     description:
-    "Sitio web de simulación de una fundación de mascotas, desarrollada con Next.js y Tailwind, muestra las mascotas disponibles para adoptar, formulario para solicitar la adopción, en el backend se muestra la solicitud por gmail y en la ruta /dashborad, puedes registrarte e iniciar sesión.",
+      "Sitio web de simulación de una fundación de mascotas, desarrollada con Next.js y Tailwind, muestra las mascotas disponibles para adoptar, formulario para solicitar la adopción, en el backend se muestra la solicitud por gmail y en la ruta /dashborad, puedes registrarte e iniciar sesión.",
     link: "https://petadoptions.xyz/",
     github: "https://github.com/Haiverhdz/PetAdoption",
     image: "/petadoption.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
   },
 
   {
     title: "Contables ECG",
     description:
-    "Desarrollo de un sitio web corporativo responsivo para una firma contable, creado con Astro y Tailwind CSS. Incluye sección de bienvenida con imagen de fondo, presentación de servicios, calendario tributario y enlaces de contacto/redes sociales. Diseñado para ofrecer una experiencia rápida, clara y optimizada en dispositivos móviles y escritorio.",
+      "Desarrollo de un sitio web corporativo responsivo para una firma contable, creado con Astro y Tailwind CSS. Incluye sección de bienvenida con imagen de fondo, presentación de servicios, calendario tributario y enlaces de contacto/redes sociales. Diseñado para ofrecer una experiencia rápida, clara y optimizada en dispositivos móviles y escritorio.",
     link: "https://www.contablesecg.com/",
     github: "https://github.com/Haiverhdz/contables-ECG",
     image: "/ECG1.png",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT ],
   },
 
-
   {
-  title: "Ecommerce Fake API",
-  description:
-    "Tienda online desarrollada con React y Vite que consume productos desde la FakeStore API. Permite explorar productos, ver detalles, añadir al carrito y simular compras. Un proyecto enfocado en la práctica de consumo de APIs, enrutamiento y estado global con Context API.",
-  link: "https://ecommerce-fake-api-git-main-haivers-projects-cb7bcb5a.vercel.app/", 
-  github: "https://github.com/Haiverhdz/Ecommerce-FakeApi",
-  image: "/react1.png",
-  tags: [TAGS.REACT, TAGS.VITE, TAGS.CSS],
-},
-]
+    title: "Ecommerce Fake API",
+    description:
+      "Tienda online desarrollada con React y Vite que consume productos desde la FakeStore API. Permite explorar productos, ver detalles, añadir al carrito y simular compras. Un proyecto enfocado en la práctica de consumo de APIs, enrutamiento y estado global con Context API.",
+    link: "https://ecommerce-fake-api-git-main-haivers-projects-cb7bcb5a.vercel.app/",
+    github: "https://github.com/Haiverhdz/Ecommerce-FakeApi",
+    image: "/react1.png",
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -169,6 +195,3 @@ const PROJECTS = [
     ))
   }
 </div>
-
-
-
