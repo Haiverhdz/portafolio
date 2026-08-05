@@ -236,12 +236,12 @@ const PROJECTS = [
   )
 }
 <script>
-  const button = document.querySelector("#toggle-projects");
+  const button = document.querySelector<HTMLElement>("#toggle-projects");
 
   if (button) {
     let expanded = false;
 
-    const projects = document.querySelectorAll("[data-project]");
+    const projects = document.querySelectorAll<HTMLElement>("[data-project]");
 
     button.addEventListener("click", () => {
       expanded = !expanded;
