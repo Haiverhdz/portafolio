@@ -92,6 +92,33 @@ const TAGS = {
 
 const PROJECTS = [
   {
+    title: "Providencia Valparaiso",
+    description:
+      "Desarrollo de un sitio we con Next.js y Tailwind CSS para una hostería en Valparaiso Antioquia. El sitio incluye una sección de bienvenida con una imagen de fondo, presentación de servicios, galería de habitaciones y enlaces de contacto/redes sociales. El diseño es moderno, limpio y optimizado para dispositivos móviles y escritorio. Además, se implementó un formulario de contacto funcional para que los visitantes puedan solicitar información o reservar habitaciones fácilmente.",
+    link: "https://providenciavalparaiso.com/",
+    github: "https://github.com/Haiverhdz/Providencia-Valparaiso",
+    image: "/providencia.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Fajas Dila",
+    description:
+      "Desarrollo de un e-commerce para la venta de fajas, construido con Next.js, Tailwind CSS y CSS. Implementa catálogo de productos, filtrado por categorías, páginas de detalle, carrito de compras, diseño responsive y una experiencia de usuario optimizada. La integración con la pasarela de pagos se encuentra en desarrollo.",
+    link: "https://fajasdila.com/",
+    github: "https://github.com/Haiverhdz/Fajas-Dila",
+    image: "/fajas-dila.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "RideMed",
+    description:
+      "Aplicación web desarrollada con Next.js, Tailwind CSS y CSS para ofrecer servicios de transporte privado con conductor. Incluye internacionalización (ES/EN), Progressive Web App (PWA), catálogo de servicios, destinos y formulario de contacto. El desarrollo fue realizado mediante un flujo de trabajo asistido por IA (vibe coding).",
+    link: "https://ridemed.onrender.com/es",
+    github: "https://github.com/Haiverhdz/RideMed",
+    image: "/ridemed.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
     title: "Samy's pet mobile grooming",
     description:
       "Desarrollo de un sitio web con React, Tailwind y CSS nativo para un grooming móvil de mascotas. El sitio incluye una sección de bienvenida con una imagen de fondo, presentación de servicios, galería de trabajos anteriores y enlaces de contacto/redes sociales. El diseño es moderno, limpio y optimizado para dispositivos móviles y escritorio. Además, se implementó un formulario de contacto funcional para que los visitantes puedan solicitar información o reservar citas fácilmente donde al poner sus datos quedan registrados en Firebase, ademas se agrega ReactG4 Analytics para medir el tráfico del sitio y el comportamiento de los usuarios, lo que permite optimizar la experiencia y mejorar la conversión de visitantes a clientes. El proyecto se hace en equipo con un amigo, yo me encargue del frontend y el diseño, mientras que el se encargo del backend y la integración con Firebase.",
@@ -125,73 +152,119 @@ const PROJECTS = [
       "Desarrollo de un sitio web corporativo responsivo para una firma contable, creado con Astro y Tailwind CSS. Incluye sección de bienvenida con imagen de fondo, presentación de servicios, calendario tributario y enlaces de contacto/redes sociales. Diseñado para ofrecer una experiencia rápida, clara y optimizada en dispositivos móviles y escritorio.",
     link: "https://www.contablesecg.com/",
     github: "https://github.com/Haiverhdz/contables-ECG",
-    image: "/ECG1.png",
+    image: "/ecg.webp",
     tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT ],
   },
-
-  // {
-  //   title: "Ecommerce Fake API",
-  //   description:
-  //     "Tienda online desarrollada con React y Vite que consume productos desde la FakeStore API. Permite explorar productos, ver detalles, añadir al carrito y simular compras. Un proyecto enfocado en la práctica de consumo de APIs, enrutamiento y estado global con Context API.",
-  //   link: "https://ecommerce-fake-api-git-main-haivers-projects-cb7bcb5a.vercel.app/",
-  //   github: "https://github.com/Haiverhdz/Ecommerce-FakeApi",
-  //   image: "/react1.png",
-  //   tags: [TAGS.REACT, TAGS.VITE, TAGS.CSS, TAGS.JAVASCRIPT],
-  // },
-];
+]
 ---
-
-<div class="flex flex-col gap-y-16">
+<div id="projects-container" class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              <img
-                alt="Projects"
-                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                loading="lazy"
-                src={image}
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2 mb-4">
-            {tags.map((tag) => (
-              <span
-                class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-transparent dark:border-white/10 dark:bg-white/10 dark:text-white`}
-              >
-                <tag.icon class="size-5 text-white dark:text-white" />
-                {tag.name}
-              </span>
-            ))}
+    PROJECTS.map(
+      ({ image, title, description, tags, link, github }, index) => (
+        <article
+          data-project
+          data-hidden={index >= 3}
+          class={`project flex flex-col space-x-0 space-y-8 group transition-all duration-500 ease-in-out md:flex-row md:space-x-8 md:space-y-0 ${
+            index >= 4 ? "hidden opacity-0" : ""
+          }`}
+        >
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                <img
+                  alt={title}
+                  class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                  loading="lazy"
+                  src={image}
+                />
+              </a>
+            </div>
           </div>
 
-          <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
 
-          <footer class="flex items-end justify-start mt-4 gap-x-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHub class="size-6" />
-                Code
-              </LinkButton>
-            )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="size-4" />
-                Preview
-              </LinkButton>
-            )}
-          </footer>
-        </div>
-      </article>
-    ))
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2 mb-4">
+              {tags.map((tag) => (
+                <span
+                  class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-transparent dark:border-white/10 dark:bg-white/10 dark:text-white`}
+                >
+                  <tag.icon class="size-5 text-white dark:text-white" />
+                  {tag.name}
+                </span>
+              ))}
+            </div>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </article>
+      )
+    )
   }
 </div>
+
+{
+  PROJECTS.length > 4 && (
+    <div class="mt-12 flex justify-center">
+      <button
+        id="toggle-projects"
+        class="rounded-full border border-gray-300 px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
+      >
+        Ver más proyectos
+      </button>
+    </div>
+  )
+}
+<script>
+  const button = document.querySelector("#toggle-projects");
+
+  if (button) {
+    let expanded = false;
+
+    const projects = document.querySelectorAll("[data-project]");
+
+    button.addEventListener("click", () => {
+      expanded = !expanded;
+
+      projects.forEach((project) => {
+        if (project.dataset.hidden === "true") {
+          project.classList.toggle("hidden");
+          project.classList.toggle("opacity-0");
+        }
+      });
+
+      button.textContent = expanded
+        ? "Ver menos proyectos"
+        : "Ver más proyectos";
+
+      if (!expanded) {
+        document
+          .getElementById("projects-container")
+          ?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+      }
+    });
+  }
+</script>
