@@ -163,7 +163,7 @@ const PROJECTS = [
       ({ image, title, description, tags, link, github }, index) => (
         <article
           data-project
-          data-hidden={index >= 3}
+          data-hidden={index >= 4 ? "true" : "false"}
           class={`project flex flex-col space-x-0 space-y-8 group transition-all duration-500 ease-in-out md:flex-row md:space-x-8 md:space-y-0 ${
             index >= 4 ? "hidden opacity-0" : ""
           }`}
